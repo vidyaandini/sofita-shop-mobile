@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sofita_shop/menu.dart';
+import 'package:sofita_shop/screens/menu.dart';
 
 void main() {
   runApp(const MyApp());

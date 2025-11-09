@@ -40,3 +40,25 @@ TUGAS 7
    terlihat tanpa kehilangan data yang sebelumnya sudah ada dalam aplikasi. Bedanya hot reload dari hot restart yaitu kecepatannya, hot reload bisa sangat cepat karena tidak melakukan rebuild total, hanya melakukan rebuild pada beberapa bagian 
    saja, selain itu hot reload juga mempertahankan state sementara hot restart mereset state ke kondisi awal, namun hot reload hanya dapat digunakan hanya saat mengubah UI atau logika yang ukurannya kecil, misalnya mengganti teks, namun kika 
    ingin menambah variabel baru di main() atau mengubah struktur dari StatefulWidget, kita perlu menggunakan hot restart.
+
+----------------------------------------------------------------------------------------------------
+TUGAS 8
+1. Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement() pada Flutter. Dalam kasus apa sebaiknya masing-masing digunakan pada aplikasi Football Shop kamu?
+   Navigator.push() merupakan metode push yang digunakan untuk menambahkan rute baru ke atas tumpukan screen yang sedang dibuka atau screen saat ini, tetapi rute saat ini tetap ada sehingga pengguna tetap bisa kembali ke layar sebelumnya. 
+   Navigator.pushReplacement() merupakan metode push yang digunakan untuk mengganti rute yang saat ini sedang dibuka dengan rute yang baru, rute yang lama nantinya akan dihapus dari stack sehingga pengguna tidak dapat kembali ke layar sebelumnya. 
+   Perbedaan terbesar dari kedua fitur ini yaitu bagaimana Flutter menyimpen rute sebelumnya ketika ada rute baru, kalau Navigator.pushReplacement() tidak menyimpan rute sebelumnya jika ada rute baru yang masuk. Saya menggunakan Navigator.push() 
+   pada fitur "Create Products", jadi ketika pengguna menekan tombol "Create Products", maka akan keluar field untuk menambahkan produk, namun pengguna juga tetap bisa kembali ke home page dengan tombol back. Kalau untuk Navigator.pushReplacement() 
+   saya gunakan untuk bagian home page.
+2. Bagaimana kamu memanfaatkan hierarchy widget seperti Scaffold, AppBar, dan Drawer untuk membangun struktur halaman yang konsisten di seluruh aplikasi?
+   a. Scaffold: Saya memanfaatkan Scaffold sebagai kerangka utama dari setiap halaman karena Scaffold menyediakan struktur visual yang konsisten sesuai dengan pedoman Material Design yang nantinya akan diisi oleh AppBar, Drawer, dan lain-lain.
+   b. AppBar: Saya memanfaatkan AppBar untuk menampilkan judul, ikon, warna tema, dan lain-lain supaya bisa seragam dan konsisten pada aplikasi. Dalam tugas ini, saya memanfaatkan AppBar untuk menjaga warna backgroundColor dari header Sofita Shop 
+      menjadi warna biru dan untuk bagian form tambah produk agar backgroundColor-nya menjadi warna indigo.
+   c. Drawer: Saya memanfaatkan Drawer untuk menu samping yang nantinya bisa diisi oleh widget-widget, dalam tugas ini saya menggunakan Drawer di kiri yang berisi widget "home", widget "add product", dan widget "see product".
+3. Dalam konteks desain antarmuka, apa kelebihan menggunakan layout widget seperti Padding, SingleChildScrollView, dan ListView saat menampilkan elemen-elemen form? Berikan contoh penggunaannya dari aplikasi kamu.
+   Kelebihan dari penggunaan layout widget tentunya banyak karena bisa membanttu saya dalam proses pembuatan aplikasi, seperti Padding yang saya gunakan untuk menjaga tata letak dari widget-diget yang saya gunakan agar bisa lebih tertata 
+   rapi, contoh penggunaannya yaitu pada fitur tambah produk sehingga field-fieldnya bisa tertata rapi letaknya serta rata kanan dan kirinya. Untuk SingleChildScrollView saya gunakan agar aplikasi saya bisa discroll ketika kontennya panjang, 
+   contohnya saya gunakan untuk bagian form tambah produk, karena ada beberapa field, bisa ada risiko muncul overflow sehingga perlu dicegah dengan SingleChildScrollView. Terakhir yaitu ListView yang saya gunakan untuk daftar yang ukurannya cukup 
+   panjang sehingga bisa lebih efisien.
+4. Bagaimana kamu menyesuaikan warna tema agar aplikasi Football Shop memiliki identitas visual yang konsisten dengan brand toko?
+   Agar tema pada aplikasi saya bisa punya identitas visual yang konsisten, saya menggunakan ThemeData di MaterialApp seperti primaryColor, secondaryColor, seedColor, dan lain-lain lalu saya terapkan ke seluruh widget. Contohnya colorScheme saya beri 
+   warna indigo, lalu untuk appBarTheme saya beri warna indigo dan putih, dan untuk elevatedButtonTheme saya beri warna indigo.
