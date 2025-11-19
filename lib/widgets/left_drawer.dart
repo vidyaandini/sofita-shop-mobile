@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sofita_shop/screens/menu.dart';
 // Impor halaman ProductFormPage jika sudah dibuat
 import 'package:sofita_shop/screens/productlist_form.dart';
+import 'package:sofita_shop/screens/product_entry_list.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -66,17 +67,16 @@ class LeftDrawer extends StatelessWidget {
                   ));
             },
           ),
-          // Buat ListTile baru untuk ke halaman melihat news
+
           ListTile(
-            leading: const Icon(Icons.post_add),
-            title: const Text('See Product'),
-            // Bagian redirection ke MyHomePage
+            leading: const Icon(Icons.add_reaction_rounded),
+            title: const Text('Product List'),
             onTap: () {
-              Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => MyHomePage(),
-                  ));
+              // Route to product list page
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ProductEntryListPage()),
+              );
             },
           ),
         ],
